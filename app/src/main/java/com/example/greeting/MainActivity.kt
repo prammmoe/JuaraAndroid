@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.greeting.ui.theme.HappyBirthdayTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,22 +27,20 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Meghan")
+                    GreetingText(message = "Android")
                 }
             }
         }
     }
 }
 
-// Jangan langsung dipreview di sini, karena @Preview tidak mendukung function yang berisi parameter, sehingga harus dibuat function baru untuk preview dengan parameter kosong
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Surface(color = Color.LightGray) {
-        Text(
-            text = "Hi, my name is $name!",
-            modifier = Modifier.padding(24.dp)
-        )
-    }
+fun GreetingText(message: String, modifier: Modifier = Modifier) {
+    Text(
+        text = message,
+        fontSize = 100.sp,
+        lineHeight = 116.sp
+    )
 }
 
 // Buat fungsi baru untuk preview dari function Greeting
@@ -49,6 +48,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        Greeting("Meghan")
+        GreetingText(message = "Happy Birthday, Sam!")
     }
 }
