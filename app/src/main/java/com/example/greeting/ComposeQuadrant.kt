@@ -29,7 +29,6 @@ class ComposeQuadrant : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             HappyBirthdayTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -52,7 +51,7 @@ fun Quadrant() {
                 modifier = Modifier.weight(1f)
             )
             QuadrantCard(
-                title = "Image composable\n",
+                title = "Image composable",
                 description = "Creates a composable that lays out and draws a given Painter class object.\n",
                 backgroundColor = Color(0xFFD0BCFF),
                 modifier = Modifier.weight(1f)
@@ -60,13 +59,13 @@ fun Quadrant() {
         }
         Row(Modifier.weight(1f)) {
             QuadrantCard(
-                title = "Row composable\n",
+                title = "Row composable",
                 description = "A layout composable that places its children in a horizontal sequence.\n",
                 backgroundColor = Color(0xFFB69DF8),
                 modifier = Modifier.weight(1f)
             )
             QuadrantCard(
-                title = "Column composable\n",
+                title = "Column composable",
                 description = "A layout composable that places its children in a vertical sequence.\n",
                 backgroundColor = Color(0xFFF6EDFF),
                 modifier = Modifier.weight(1f)
